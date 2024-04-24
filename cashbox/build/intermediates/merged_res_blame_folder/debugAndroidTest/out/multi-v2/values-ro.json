@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-ro/values-ro.xml",
+            "map": [
+                {
+                    "source": "/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/packaged_res/debug/values-ro/values-ro.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "70",
+                        "endOffsets": "121"
+                    }
+                }
+            ]
+        }
+    ]
+}

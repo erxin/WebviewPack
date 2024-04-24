@@ -1,0 +1,5 @@
+include ':app'
+include ':tts'
+include ':sunmi'
+include ':screen'
+include ':cashbox'

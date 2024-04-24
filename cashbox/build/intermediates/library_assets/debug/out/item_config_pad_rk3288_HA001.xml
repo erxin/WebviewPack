@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <UartControlCenter>
+    <FunctionItem
+        name="MainScreen"
+        enable="true"
+        auto="false"
+        className="com.hcd.hcdposfactorykit.MainScreen"
+    ></FunctionItem>
+    <FunctionItem
+        name="Speaker"
+        enable="true"
+        auto="false"
+        className="com.hcd.hcdposfactorykit.Speaker"
+    ></FunctionItem>
+    <FunctionItem
+        name="USBPort"
+        enable="true"
+        auto="false"
+        className="com.hcd.hcdposfactorykit.USBPort"
+    ></FunctionItem>
+    <FunctionItem
+        name="Efuse"
+        enable="true"
+        auto="true"
+        className="com.hcd.hcdposfactorykit.Efuse"
+    ></FunctionItem>
+    <FunctionItem
+        name="RecoveryButton"
+        enable="true"
+        auto="false"
+        className="com.hcd.hcdposfactorykit.RecoveryButton"
+    ></FunctionItem>
+    <FunctionItem
+        name="CheckDDRAndEmmc"
+        enable="true"
+        auto="true"
+        burnin="true"
+        className="com.hcd.hcdposfactorykit.CheckDDRAndEmmc"
+    ></FunctionItem>
+    <FunctionItem
+        name="SIM"
+        enable="true"
+        auto="true"
+        className="com.hcd.hcdposfactorykit.SIM"
+    ></FunctionItem>
+</UartControlCenter>
+

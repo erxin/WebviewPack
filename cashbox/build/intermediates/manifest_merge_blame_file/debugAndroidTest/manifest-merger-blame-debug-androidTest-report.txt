@@ -1,0 +1,67 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.hcd.hcdposfactorykit.test" >
+4
+5    <uses-sdk
+5-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:5:5-74
+6        android:minSdkVersion="16"
+6-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:5:15-41
+7        android:targetSdkVersion="28" />
+7-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:5:42-71
+8
+9    <instrumentation
+9-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:11:5-15:79
+10        android:name="androidx.test.runner.AndroidJUnitRunner"
+10-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:11:22-76
+11        android:functionalTest="false"
+11-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:14:22-52
+12        android:handleProfiling="false"
+12-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:13:22-53
+13        android:label="Tests for com.hcd.hcdposfactorykit.test"
+13-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:15:22-77
+14        android:targetPackage="com.hcd.hcdposfactorykit.test" />
+14-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:12:22-75
+15
+16    <uses-permission android:name="android.permission.WAKE_LOCK" />
+16-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-68
+16-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-65
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-79
+17-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-76
+18    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+18-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-79
+18-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:22-76
+19    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+19-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-76
+19-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:22-73
+20    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+20-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-76
+20-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:22-73
+21    <uses-permission android:name="android.permission.BLUETOOTH" />
+21-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:5-68
+21-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:22-65
+22    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+22-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:5-74
+22-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:22-71
+23    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+23-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:5-80
+23-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:22-77
+24    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
+24-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:5-78
+24-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:22-75
+25    <uses-permission android:name="android.permission.CAMERA" />
+25-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:5-65
+25-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:22-62
+26    <uses-permission android:name="android.permission.FLASHLIGHT" />
+26-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:5-69
+26-->[:cashbox] /Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:22-66
+27
+28    <application android:debuggable="true" >
+28-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:7:5-9:19
+28-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:7:18-43
+29        <uses-library android:name="android.test.runner" />
+29-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:8:9-60
+29-->/Users/hitosea-005/Desktop/unitPlugins/Android-SDK@3.99.81992_20231216/UniPlugin-Hello-AS/cashbox/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger12231783377548037614.xml:8:23-57
+30    </application>
+31
+32</manifest>
