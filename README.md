@@ -7,3 +7,5 @@ JBC 分支
 证书 compax.keystore
 证书alias compax
 证书password compax
+
+生成资源，替换 mian->hybrid->里所有资源(assets,static,index)
