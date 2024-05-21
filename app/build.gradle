@@ -5,8 +5,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-//        applicationId "com.jbc.menu"
-        applicationId "com.tiger.menu"
+        applicationId "com.jbc.menu"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -32,14 +31,9 @@ android {
             zipAlignEnabled true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            applicationVariants.all { variant ->
-//                variant.outputs.all {
-//                    outputFileName = "JBCレジ-Menu V${variant.versionName}.apk"
-//                }
-//            }
             applicationVariants.all { variant ->
                 variant.outputs.all {
-                    outputFileName = "Tiger-Menu V${variant.versionName}.apk"
+                    outputFileName = "JBCレジ-Menu V${variant.versionName}.apk"
                 }
             }
         }
