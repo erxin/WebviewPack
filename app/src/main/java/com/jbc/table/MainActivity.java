@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         model = getPhoneModel();
-        if (model.equals("rk3568_r")){
+        if (model.equals("rk3568_r")){//判断是否是竖屏设备，进行适配
             setVerticalScreen(this);
         }
 
