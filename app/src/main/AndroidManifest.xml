@@ -13,7 +13,6 @@
         android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:resizeableActivity="true">
-<!--        android:screenOrientation="landscape"-->
         <activity
             android:name=".MainActivity"
             android:exported="true"
