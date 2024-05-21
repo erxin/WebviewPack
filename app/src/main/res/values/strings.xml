@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">JBCレジ</string>
+    <string name="app_name_jbc">JBCレジ-Menu</string>
+    <string name="app_name_tiger">Tiger-Menu</string>
+
 </resources>

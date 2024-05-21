@@ -5,11 +5,12 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.jbc.cashier"
+//        applicationId "com.jbc.menu"
+        applicationId "com.tiger.menu"
         minSdk 24
         targetSdk 33
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,12 +32,14 @@ android {
             zipAlignEnabled true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            applicationVariants.all { variant ->
+//                variant.outputs.all {
+//                    outputFileName = "JBCレジ-Menu V${variant.versionName}.apk"
+//                }
+//            }
             applicationVariants.all { variant ->
                 variant.outputs.all {
-                    outputFileName = "JBCレジ-V${variant.versionName}.apk"
-//                    variant.getPackageApplication().outputDirectory = new File("/Users/hitosea-005/Desktop/apk/JBCレジ")
-//                    def customDir = "/Users/hitosea-005/Desktop/apk/JBCレジ"
-//                    setOutputFile(new File(customDir, outputFileName))
+                    outputFileName = "Tiger-Menu V${variant.versionName}.apk"
                 }
             }
         }

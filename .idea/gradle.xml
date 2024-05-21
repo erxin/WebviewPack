@@ -12,10 +12,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/cashbox" />
-            <option value="$PROJECT_DIR$/screen" />
-            <option value="$PROJECT_DIR$/sunmi" />
-            <option value="$PROJECT_DIR$/tts" />
           </set>
         </option>
       </GradleProjectSettings>
