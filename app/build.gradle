@@ -33,7 +33,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             applicationVariants.all { variant ->
                 variant.outputs.all {
+//                    outputFileName = "Tiger-Menu vertical V${variant.versionName}.apk" //打竖屏的包
                     outputFileName = "Tiger-Menu V${variant.versionName}.apk"
+
                 }
             }
         }

@@ -13,10 +13,13 @@
         android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:resizeableActivity="true">
+<!--    横屏                android:screenOrientation="landscape"-->
+<!--    竖屏                android:screenOrientation="fullSensor"-->
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="landscape"
+            android:screenOrientation="fullSensor"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
