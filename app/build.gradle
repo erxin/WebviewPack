@@ -8,8 +8,8 @@ android {
         applicationId "com.jbc.menu"
         minSdk 24
         targetSdk 33
-        versionCode 1
-        versionName "1.0.3"
+        versionCode 104
+        versionName "1.0.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -33,6 +33,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             applicationVariants.all { variant ->
                 variant.outputs.all {
+//                    outputFileName = "JBCレジ-Menu vertical V${variant.versionName}.apk"
                     outputFileName = "JBCレジ-Menu V${variant.versionName}.apk"
                 }
             }

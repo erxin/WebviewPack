@@ -32,10 +32,10 @@ public class MainActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        model = getPhoneModel();
-        if (model.equals("rk3568_r")){//判断是否是竖屏设备，进行适配
-            setVerticalScreen(this);
-        }
+//        model = getPhoneModel();
+//        if (model.equals("rk3568_r")){//判断是否是竖屏设备，进行适配
+//            setVerticalScreen(this);
+//        }
 
 
         WebView webView = findViewById(R.id.mywebview);
@@ -92,12 +92,14 @@ public class MainActivity extends Activity {
                 return super.onJsAlert(view, url, message, result);
             }
         });
+        webView.addJavascriptInterface(new androidIDInterface(this),"androidIDInterface");
+        webSettings.setUserAgentString(webSettings.getUserAgentString()+";Custom/JBCWeb;platform/android");
 
         webView.setWebViewClient(new WebViewClient());
-
+        // http://192.168.100.152:5173/ file:///android_asset/hybrid/index.html
         webView.loadUrl("file:///android_asset/hybrid/index.html");
-        webSettings.setUserAgentString(webSettings.getUserAgentString()+";Custom/JBCWeb");
-        webView.addJavascriptInterface(new androidIDInterface(this),"androidIDInterface");
+
+
     }
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
