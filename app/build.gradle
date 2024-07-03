@@ -34,7 +34,7 @@ android {
             applicationVariants.all { variant ->
                 variant.outputs.all {
 //                    outputFileName = "JBCレジ-Menu vertical V${variant.versionName}.apk"
-                    outputFileName = "JBCレジ-Menu V${variant.versionName}.apk"
+                    outputFileName = "JBCレジ-Menu-V${variant.versionName}.apk"
                 }
             }
         }
@@ -44,11 +44,32 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+//        task uploadApk(type: Exec) {
+//
+//            workingDir project.rootDir
+//
+//            commandLine 'scp', "-i", "id_tiger_rsa", "app/build/outputs/apk/release/JBCレジ-Menu-V${defaultConfig.versionName}-build${defaultConfig.versionCode}.apk", "root@34.143.202.57:/www/wwwroot/out/download/Menu"
+//
+//        }
+//
+//// 在assembleRelease任务完成后执行uploadApk任务
+//
+//        tasks.whenTaskAdded { task ->
+//
+//            if (task.name.startsWith("assemble")) {
+//
+//                task.finalizedBy('uploadApk')
+//
+//            }
+//
+//        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+
 }
 
 dependencies {
