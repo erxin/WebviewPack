@@ -8,7 +8,7 @@ android {
         applicationId "com.tiger.menu"
         minSdk 24
         targetSdk 33
-        versionCode 1
+        versionCode 105
         versionName "1.0.4.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -34,8 +34,9 @@ android {
             applicationVariants.all { variant ->
                 variant.outputs.all {
 //                    outputFileName = "Tiger-Menu vertical V${variant.versionName}.apk" //打竖屏的包
-                    outputFileName = "Tiger-Menu V${variant.versionName}.apk"
-
+//                    outputFileName = "Tiger-Menu-V${variant.versionName}.apk"
+                    //${new Date().format('yyyyMMdd')}
+                    outputFileName = "Tiger-Menu-V${defaultConfig.versionName}-build-${defaultConfig.versionCode}.apk"
                 }
             }
         }
