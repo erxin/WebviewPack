@@ -34,7 +34,9 @@ android {
             applicationVariants.all { variant ->
                 variant.outputs.all {
 //                    outputFileName = "JBCレジ-Menu vertical V${variant.versionName}.apk"
-                    outputFileName = "JBCレジ-Menu-V${variant.versionName}.apk"
+//                    outputFileName = "JBCレジ-Menu-V${variant.versionName}.apk"
+                    outputFileName = "JBCレジ-Menu-V${defaultConfig.versionName}-build-${defaultConfig.versionCode}.apk"
+
                 }
             }
         }
