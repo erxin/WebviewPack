@@ -1,3 +1,5 @@
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 apply plugin: 'com.android.application'
 
 android {
@@ -25,6 +27,12 @@ android {
         }
     }
 
+    def currentDateString =  LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmm"))
+    project.ext {
+        // Tiger
+        serverPath = "/www/wwwroot/restant/out/download/Menu"
+        outputName = "Tiger-Menu-V${defaultConfig.versionName}-${currentDateString}-build-${defaultConfig.versionCode}.apk"
+    }
     buildTypes {
         release {
             signingConfig signingConfigs.config
@@ -35,8 +43,8 @@ android {
                 variant.outputs.all {
 //                    outputFileName = "Tiger-Menu vertical V${variant.versionName}.apk" //打竖屏的包
 //                    outputFileName = "Tiger-Menu-V${variant.versionName}.apk"
-                    //${new Date().format('yyyyMMdd')}
-                    outputFileName = "Tiger-Menu-V${defaultConfig.versionName}-build-${defaultConfig.versionCode}.apk"
+//                    outputFileName = "Tiger-Menu-V${defaultConfig.versionName}-build-${defaultConfig.versionCode}-${new Date().format('yyyyMMddHHmm')}.apk"
+                    outputFileName = "${project.outputName}"
                 }
             }
         }
@@ -50,6 +58,25 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    def appBuildPath = "app/build/outputs/apk/release/${project.outputName}"
+    def appServerPath = "root@34.143.202.57:${project.serverPath}"
+
+    logger.quiet(appBuildPath)
+    logger.quiet(appServerPath)
+    task uploadApk(type: Exec) {
+//        泰国/www/wwwroot/restant/out/download
+//        日本/www/wwwroot/out/download/
+        workingDir project.rootDir
+        commandLine 'scp', "-i", "id_tiger_rsa", appBuildPath, appServerPath
+    }
+
+    // 在assembleRelease任务完成后执行uploadApk任务
+    tasks.whenTaskAdded { task ->
+        if (task.name.startsWith("assemble") && task.name.endsWith("upload")) {
+            sleep(2000) // 延迟等待包完全打完
+            task.finalizedBy('uploadApk')
+        }
     }
 }
 
