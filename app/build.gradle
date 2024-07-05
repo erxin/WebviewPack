@@ -1,3 +1,5 @@
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 apply plugin: 'com.android.application'
 
 android {
@@ -24,6 +26,12 @@ android {
             v2SigningEnabled true
         }
     }
+    def currentDateString =  LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmm"))
+    project.ext {
+        // JBCレジ
+        serverPath = "/www/wwwroot/out/download/Menu"
+        outputName = "JBCレジ-Menu-V${defaultConfig.versionName}-${currentDateString}-build-${defaultConfig.versionCode}.apk"
+    }
 
     buildTypes {
         release {
@@ -35,8 +43,8 @@ android {
                 variant.outputs.all {
 //                    outputFileName = "JBCレジ-Menu vertical V${variant.versionName}.apk"
 //                    outputFileName = "JBCレジ-Menu-V${variant.versionName}.apk"
-                    outputFileName = "JBCレジ-Menu-V${defaultConfig.versionName}-build-${defaultConfig.versionCode}.apk"
-
+//                    outputFileName = "JBCレジ-Menu-V${defaultConfig.versionName}-build-${defaultConfig.versionCode}.apk"
+                    outputFileName = "${project.outputName}"
                 }
             }
         }
@@ -46,25 +54,24 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-//        task uploadApk(type: Exec) {
-//
-//            workingDir project.rootDir
-//
-//            commandLine 'scp', "-i", "id_tiger_rsa", "app/build/outputs/apk/release/JBCレジ-Menu-V${defaultConfig.versionName}-build${defaultConfig.versionCode}.apk", "root@34.143.202.57:/www/wwwroot/out/download/Menu"
-//
-//        }
-//
-//// 在assembleRelease任务完成后执行uploadApk任务
-//
-//        tasks.whenTaskAdded { task ->
-//
-//            if (task.name.startsWith("assemble")) {
-//
-//                task.finalizedBy('uploadApk')
-//
-//            }
-//
-//        }
+        def appBuildPath = "app/build/outputs/apk/release/${project.outputName}"
+        def appServerPath = "root@34.143.202.57:${project.serverPath}"
+        logger.quiet(appBuildPath)
+        logger.quiet(appServerPath)
+        task uploadApk(type: Exec) {
+        //        泰国/www/wwwroot/restant/out/download
+        //        日本/www/wwwroot/out/download/
+            workingDir project.rootDir
+            commandLine 'scp', "-i", "id_tiger_rsa", appBuildPath, appServerPath
+        }
+
+        // 在assembleRelease任务完成后执行uploadApk任务
+        tasks.whenTaskAdded { task ->
+            if (task.name.startsWith("assemble") && task.name.endsWith("upload")) {
+                sleep(2000) // 延迟等待包完全打完
+                task.finalizedBy('uploadApk')
+            }
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
