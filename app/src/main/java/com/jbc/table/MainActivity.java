@@ -98,8 +98,11 @@ public class MainActivity extends Activity {
         webView.setWebViewClient(new WebViewClient());
         // http://192.168.100.152:5173/ file:///android_asset/hybrid/index.html
         webView.loadUrl("file:///android_asset/hybrid/index.html");
-
-
+//        if (BuildConfig.DEBUG) {
+//            webView.loadUrl("http://192.168.31.142:5173/");
+//        } else {
+//            webView.loadUrl("file:///android_asset/hybrid/index.html");
+//        }
     }
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
