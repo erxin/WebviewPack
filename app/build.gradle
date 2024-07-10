@@ -8,6 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.tiger.menu"
+        applicationId "com.jbc.menu"
         minSdk 24
         targetSdk 33
         versionCode 105
@@ -28,10 +29,15 @@ android {
     }
 
     def currentDateString =  LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmm"))
+//    project.ext {
+//        // Tiger
+//        serverPath = "/www/wwwroot/restant/out/download/Menu"
+//        outputName = "Tiger-Menu-V${defaultConfig.versionName}-${currentDateString}-build-${defaultConfig.versionCode}.apk"
+//    }
     project.ext {
         // Tiger
-        serverPath = "/www/wwwroot/restant/out/download/Menu"
-        outputName = "Tiger-Menu-V${defaultConfig.versionName}-${currentDateString}-build-${defaultConfig.versionCode}.apk"
+        serverPath = "/www/wwwroot/out/download/Menu"
+        outputName = "JBCレジ-Menu-V${defaultConfig.versionName}-${currentDateString}-build-${defaultConfig.versionCode}.apk"
     }
     buildTypes {
         release {
@@ -65,8 +71,8 @@ android {
     logger.quiet(appBuildPath)
     logger.quiet(appServerPath)
     task uploadApk(type: Exec) {
-//        泰国/www/wwwroot/restant/out/download
-//        日本/www/wwwroot/out/download/
+//        泰国/www/wwwroot/restant/out/download/Menu
+//        日本/www/wwwroot/out/download/Menu
         workingDir project.rootDir
         commandLine 'scp', "-i", "id_tiger_rsa", appBuildPath, appServerPath
     }

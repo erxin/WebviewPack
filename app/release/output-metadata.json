@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.tiger.menu",
+  "applicationId": "com.jbc.menu",
   "variantName": "processReleaseResources",
   "elements": [
     {
@@ -12,7 +12,7 @@
       "filters": [],
       "versionCode": 105,
       "versionName": "1.0.4.1",
-      "outputFile": "Tiger-Menu-V1.0.4.1-build105-20240704.apk"
+      "outputFile": "JBCレジ-Menu-V1.0.4.1-202407101530-build-105.apk"
     }
   ]
 }
