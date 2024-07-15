@@ -7,7 +7,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.tiger.menu"
+//        applicationId "com.tiger.menu"
         applicationId "com.jbc.menu"
         minSdk 24
         targetSdk 33
@@ -35,7 +35,7 @@ android {
 //        outputName = "Tiger-Menu-V${defaultConfig.versionName}-${currentDateString}-build-${defaultConfig.versionCode}.apk"
 //    }
     project.ext {
-        // Tiger
+        // JBC
         serverPath = "/www/wwwroot/out/download/Menu"
         outputName = "JBCレジ-Menu-V${defaultConfig.versionName}-${currentDateString}-build-${defaultConfig.versionCode}.apk"
     }
