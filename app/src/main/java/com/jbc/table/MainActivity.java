@@ -3,6 +3,8 @@ package com.jbc.table;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,6 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.webkit.ConsoleMessage;
+import android.webkit.CookieManager;
+import android.webkit.JavascriptInterface;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -19,6 +23,7 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.jbc.table.WebInterface.androidIDInterface;
+
 
 public class MainActivity extends Activity {
 
@@ -31,12 +36,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
-//        model = getPhoneModel();
-//        if (model.equals("rk3568_r")){//判断是否是竖屏设备，进行适配
-//            setVerticalScreen(this);
-//        }
-
 
         WebView webView = findViewById(R.id.mywebview);
         WebSettings webSettings = webView.getSettings();
@@ -78,6 +77,17 @@ public class MainActivity extends Activity {
             webSettings.setOffscreenPreRaster(true);
         }
 
+        // 启用 Cookie
+
+        CookieManager cookieManager = CookieManager.getInstance();
+        cookieManager.setAcceptCookie(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            cookieManager.setAcceptThirdPartyCookies(this.webView, true);
+            // 跨域混合模式
+            webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
+
+
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
             public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
@@ -99,6 +109,8 @@ public class MainActivity extends Activity {
         webSettings.setUserAgentString(webSettings.getUserAgentString()+";Custom/JBCWeb");
         webView.addJavascriptInterface(new androidIDInterface(this),"androidIDInterface");
     }
+
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -131,15 +143,13 @@ public class MainActivity extends Activity {
             // 在主线程中执行操作
             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
         });
-
     }
-
-
 
     @Override
     public void onBackPressed() {
         if (!shouldBack) {
-            showToast("再按一次退出");
+            Log.e("yixin","yixin");
+            webView.evaluateJavascript("window.showToast('再按一次退出')",null);
             shouldBack = true;
             new Handler().postDelayed(() -> shouldBack = false, 2000); // 2秒内再次点击返回键将不起作用
         } else {
