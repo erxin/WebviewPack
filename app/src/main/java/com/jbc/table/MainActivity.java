@@ -3,8 +3,6 @@ package com.jbc.table;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,7 +12,6 @@ import android.view.View;
 import android.view.Window;
 import android.webkit.ConsoleMessage;
 import android.webkit.CookieManager;
-import android.webkit.JavascriptInterface;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -25,17 +22,43 @@ import android.widget.Toast;
 import com.jbc.table.WebInterface.androidIDInterface;
 
 
+
 public class MainActivity extends Activity {
 
+    static {
+        System.loadLibrary("native-lib");
+        System.loadLibrary("node");
+    }
+
+    public static boolean _startedNodeAlready=false;
     private WebView webView;
     private View decorView ;
     private String model;
     private Boolean shouldBack = false;
+
+    public native Integer startNodeWithArguments(String[] arguments);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+
+        if( !_startedNodeAlready ) {
+            _startedNodeAlready=true;
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    startNodeWithArguments(new String[]{"node", "-e",
+                            "var http = require('http'); " +
+                                    "var versions_server = http.createServer( (request, response) => { " +
+                                    "  response.end('Versions: ' + JSON.stringify(process.versions)); " +
+                                    "}); " +
+                                    "versions_server.listen(3000);"
+                    });
+                }
+            }).start();
+        }
+
 
         WebView webView = findViewById(R.id.mywebview);
         WebSettings webSettings = webView.getSettings();
@@ -109,6 +132,8 @@ public class MainActivity extends Activity {
         webSettings.setUserAgentString(webSettings.getUserAgentString()+";Custom/JBCWeb");
         webView.addJavascriptInterface(new androidIDInterface(this),"androidIDInterface");
     }
+
+
 
 
     @Override

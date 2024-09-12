@@ -12,6 +12,28 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         archivesBaseName = "YYXX-Menu-V${defaultConfig.versionName}-build-${defaultConfig.versionCode}"
+
+
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+                arguments "-DANDROID_STL=c++_shared"
+            }
+        }
+        ndk {
+            abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs 'libnode/bin/'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
     }
     //archivesBaseName 打包aab的配置
     signingConfigs {
@@ -24,6 +46,7 @@ android {
             v2SigningEnabled true
         }
     }
+
 
     flavorDimensions "version"
     productFlavors {
