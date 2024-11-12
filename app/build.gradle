@@ -6,8 +6,8 @@ android {
     defaultConfig {
         minSdk 24
         targetSdk 34
-        versionCode 106
-        versionName "1.0.6"
+        versionCode 112
+        versionName "1.0.8.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -47,7 +47,7 @@ android {
                 variant.outputs.all {
                     def flavor = variant.productFlavors[0].name
                     def appName = flavor == 'jbc' ? 'JBCレジ-Menu' : 'TTPOS-Menu'
-                    outputFileName = "${appName}-V${variant.versionName}-${new Date().format('yyyyMMddHHmm')}-build-${variant.versionCode}.apk"
+                    outputFileName = "${appName}-V${variant.versionName}.apk"
                 }
             }
         }
@@ -64,25 +64,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-//    def appBuildPath = "app/build/outputs/apk/release/${project.outputName}"
-//    def appServerPath = "root@34.143.202.57:${project.serverPath}"
-//
-//    logger.quiet(appBuildPath)
-//    logger.quiet(appServerPath)
-//    task uploadApk(type: Exec) {
-////        泰国/www/wwwroot/restant/out/download/Menu
-////        日本/www/wwwroot/out/download/Menu
-//        workingDir project.rootDir
-//        commandLine 'scp', "-i", "id_tiger_rsa", appBuildPath, appServerPath
-//    }
-//
-//    // 在assembleRelease任务完成后执行uploadApk任务
-//    tasks.whenTaskAdded { task ->
-//        if (task.name.startsWith("assemble") && task.name.endsWith("upload")) {
-//            sleep(2000) // 延迟等待包完全打完
-//            task.finalizedBy('uploadApk')
-//        }
-//    }
 }
 
 dependencies {

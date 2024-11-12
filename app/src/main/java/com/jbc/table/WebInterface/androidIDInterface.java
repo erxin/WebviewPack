@@ -3,10 +3,10 @@ package com.jbc.table.WebInterface;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
-import android.util.Log;
 import android.webkit.JavascriptInterface;
 
 import com.jbc.table.BuildConfig;
@@ -37,6 +37,8 @@ public class androidIDInterface {
         return String.valueOf(BuildConfig.VERSION_CODE);
     }
 
+    @JavascriptInterface
+    public String getDeviceBrand() { return Build.BRAND; }
     @JavascriptInterface
     public void openWeb(String url) {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
