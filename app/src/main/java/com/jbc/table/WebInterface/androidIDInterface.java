@@ -37,6 +37,7 @@ public class androidIDInterface {
         return String.valueOf(BuildConfig.VERSION_CODE);
     }
 
+
     @JavascriptInterface
     public String getDeviceBrand() { return Build.BRAND; }
     @JavascriptInterface
